@@ -2,7 +2,7 @@
 
 Name:		input-remapper
 Version:	2.1.1
-Release:	1
+Release:	2
 URL:		https://github.com/sezanzeb/input-remapper
 Source0:	%{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Summary:	An easy to use tool to change the behaviour of your input devices.
@@ -13,6 +13,7 @@ Group:		Accessability
 BuildSystem: python
 BuildRequires:	python
 BuildRequires:	gettext
+BuildRequires:  python-pynput
 
 %description
 An easy to use tool for Linux to change the behaviour of your input devices.
