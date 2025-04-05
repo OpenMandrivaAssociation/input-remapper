@@ -2,7 +2,7 @@
 
 Name:		input-remapper
 Version:	2.1.1
-Release:	4
+Release:	5
 URL:		https://github.com/sezanzeb/input-remapper
 Source0:	%{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Summary:	An easy to use tool to change the behaviour of your input devices.
