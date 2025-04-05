@@ -8,7 +8,7 @@ Source0:	%{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Summary:	An easy to use tool to change the behaviour of your input devices.
 
 License:	GPL-3.0
-Group:		Accessability
+Group:		Accessibility
 
 BuildSystem: python
 BuildRequires:	python
