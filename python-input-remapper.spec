@@ -17,6 +17,9 @@ BuildRequires:  python-pynput
 BuildRequires:  typelib(GtkSource)
 BuildRequires:  typelib(GtkSource) = 3.0
 
+Requires:  lib64gtk-gir3.0 
+Requires:  lib64gtksourceview-gir4
+
 %description
 An easy to use tool for Linux to change the behaviour of your input devices.
 Supports X11, Wayland, combinations, programmable macros, joysticks, wheels,
