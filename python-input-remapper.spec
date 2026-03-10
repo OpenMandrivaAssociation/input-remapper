@@ -1,32 +1,30 @@
-%global debug_package %{nil}
+%undefine _debugsource_template
 
 Name:		input-remapper
-Version:	2.1.1
-Release:	8
-URL:		https://github.com/sezanzeb/input-remapper
-Source0:	%{url}/archive/%{version}/%{name}-%{version}.tar.gz
-Summary:	An easy to use tool to change the behaviour of your input devices.
-
+Summary:	An easy to use tool to change the behaviour of your input devices
+Version:	2.2.0
+Release:	1
 License:	GPL-3.0
 Group:		Accessibility
+URL:		https://github.com/sezanzeb/input-remapper
+Source0:	%{URL}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem: python
-BuildRequires:	python
 BuildRequires:	gettext
-BuildRequires:  python-pynput
-BuildRequires:  typelib(GtkSource)
-BuildRequires:  typelib(GtkSource) = 3.0
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(pynput)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
+BuildRequires:	typelib(GtkSource)
+BuildRequires:	typelib(GtkSource) = 3.0
 
-Requires:  lib64gtk-gir3.0 
-Requires:  lib64gtksourceview-gir4
+Requires:	%{_lib}gtk-gir3.0
+Requires:	%{_lib}gtksourceview-gir4
 
 %description
 An easy to use tool for Linux to change the behaviour of your input devices.
 Supports X11, Wayland, combinations, programmable macros, joysticks, wheels,
 triggers, keys, mouse-movements and more. Maps any input to any other input.
-
-%prep
-%autosetup -p1
 
 %post
 %systemd_post %{name}.service
@@ -66,4 +64,3 @@ triggers, keys, mouse-movements and more. Maps any input to any other input.
 %lang(sk) %{_datadir}/%{name}/lang/sk*
 %lang(uk) %{_datadir}/%{name}/lang/uk*
 %lang(zh) %{_datadir}/%{name}/lang/zh*
-
