@@ -2,7 +2,7 @@
 
 Name:		input-remapper
 Summary:	An easy to use tool to change the behaviour of your input devices
-Version:	2.2.0
+Version:	2.2.1
 Release:	1
 License:	GPL-3.0
 Group:		Accessibility
