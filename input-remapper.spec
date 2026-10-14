@@ -26,6 +26,10 @@ An easy to use tool for Linux to change the behaviour of your input devices.
 Supports X11, Wayland, combinations, programmable macros, joysticks, wheels,
 triggers, keys, mouse-movements and more. Maps any input to any other input.
 
+%install -a
+# The wheel does not install system data files. Upstream's installer does.
+python -m install --root %{buildroot} --components data_files
+
 %files
 %doc README.md
 %license LICENSE
@@ -33,12 +37,14 @@ triggers, keys, mouse-movements and more. Maps any input to any other input.
 %{_sysconfdir}/xdg/autostart/%{name}-autoload.desktop
 %{_bindir}/%{name}*
 %{_unitdir}/%{name}.service
+%{_udevrulesdir}/69-%{name}-forwarded.rules
 %{_udevrulesdir}/99-%{name}.rules
 %{py_sitedir}/*
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_datadir}/applications/%{name}-gtk.desktop
 %{_datadir}/polkit-1/actions/%{name}.policy
 %{_metainfodir}/*.metainfo.xml
+%{_datadir}/%{name}/69*
 %{_datadir}/%{name}/99*
 %{_datadir}/%{name}/%{name}-autoload.desktop
 %{_datadir}/%{name}/%{name}-gtk.desktop
