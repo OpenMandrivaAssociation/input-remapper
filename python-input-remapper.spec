@@ -11,7 +11,7 @@ Source0:	%{URL}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem: python
 BuildRequires:	gettext
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pynput)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
@@ -25,12 +25,6 @@ Requires:	%{_lib}gtksourceview-gir4
 An easy to use tool for Linux to change the behaviour of your input devices.
 Supports X11, Wayland, combinations, programmable macros, joysticks, wheels,
 triggers, keys, mouse-movements and more. Maps any input to any other input.
-
-%post
-%systemd_post %{name}.service
-
-%preun
-%systemd_preun %{name}.service
 
 %files
 %doc README.md
